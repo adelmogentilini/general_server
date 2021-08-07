@@ -7,7 +7,7 @@ module.exports = async function (fastify, opts) {
   })
 
   fastify.get('/exit', async function (request, reply) {
-    setTimeout(function () {
+    setInterval(function () {
       // When NodeJS exits
       process.on("exit", function () {
 
@@ -20,7 +20,7 @@ module.exports = async function (fastify, opts) {
       });
 
       process.exit();
-    }, 1000);
+    }, 3000);
     return {message: "restart"}
 
   })
