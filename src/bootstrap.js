@@ -24,7 +24,7 @@ function main() {
         })
 
       }
-    }, 3000);
+    }, 20000);
   })
   return bootstrapApp();
 

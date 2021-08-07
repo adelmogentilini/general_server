@@ -3,7 +3,7 @@
 
 module.exports = async function (fastify, opts) {
   fastify.get('/', async function (request, reply) {
-    return { versione : '1.0' }
+    return { versione : '1.1' }
   })
 
   fastify.get('/exit', async function (request, reply) {
