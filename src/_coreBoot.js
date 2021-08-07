@@ -5,14 +5,17 @@ const Fastify = require('fastify')
 
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
+const {sleep} = require("./lib/utility");
 
 const fastify = Fastify({
   logger: true
 })
 
+
 async function bootstrapApp () {
-  
   try {
+    console.log("restart")
+    await sleep(3000)
     fastify.log.info('START AUTOLOAD PLUGINS')
     fastify.register(AutoLoad, {
       dir: path.join(__dirname, 'plugins'),
@@ -37,4 +40,4 @@ async function bootstrapApp () {
   }
 }
 
-bootstrapApp()
+module.exports.bootstrapApp = bootstrapApp

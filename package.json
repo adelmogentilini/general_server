@@ -8,17 +8,18 @@
   },
   "scripts": {
     "test": "tap test/**/*.test.js",
-    "start": "fastify start -l info app.js",
-    "dev": "fastify start -w -l info -P app.js"
+    "start": "node src/bootstrap.js",
+    "dev": "nodemon src/_coreBoot.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "dateformat": "^4.5.1",
     "fastify": "^3.0.0",
-    "fastify-plugin": "^3.0.0",
     "fastify-autoload": "^3.3.1",
-    "fastify-cli": "^2.7.0"
+    "fastify-cli": "^2.7.0",
+    "fastify-plugin": "^3.0.0"
   },
   "devDependencies": {
     "tap": "^14.11.0"
