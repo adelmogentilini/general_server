@@ -2,14 +2,14 @@
   "name": "gps",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "bootstrap.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "tap test/**/*.test.js",
     "start": "node src/bootstrap.js",
-    "dev": "nodemon src/_coreBoot.js"
+    "dev": "nodemon src/bootstrap.js"
   },
   "keywords": [],
   "author": "",
