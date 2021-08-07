@@ -1,12 +1,11 @@
 const { bootstrapApp } = require('./_coreboot');
 
-const { exec } = require('child_process');
 
 function main() {
   // 'git pull ' per autoaggiornare il sistema, e riconoscendo sull'stdout un valore aggiornato si potrebbe far ripartire il tutto ... vedere come fare'
 
   setTimeout(function () {
-    exec('git pull ', (error, stdout, stderr) => {
+    require('child_process').exec('git pull ', (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
         return;
