@@ -16,7 +16,15 @@ function main() {
       {
         console.log( "Controllo versione OK")
       }else{
-        console.log("Andrebbe AGGIORNATO")
+        console.log("Aggiornamento in corso .... ")
+        require('child_process').exec('npm install ', (error, stdout, stderr) => {
+          if (error) {
+            console.error(`exec error: ${error}`);
+            return;
+          }
+          process.exit(1)
+        })
+
       }
     }, 2000);
   })
