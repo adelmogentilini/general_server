@@ -2,7 +2,7 @@ const { bootstrapApp } = require('./_coreboot');
 
 
 function main() {
-
+	console.log("CIAO CIAO")
     require('child_process').exec('git pull ', (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
