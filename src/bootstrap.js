@@ -3,7 +3,6 @@ const { bootstrapApp } = require('./_coreboot');
 
 function main() {
 
-  setInterval(function () {
     require('child_process').exec('git pull ', (error, stdout, stderr) => {
       if (error) {
         console.error(`exec error: ${error}`);
@@ -24,12 +23,8 @@ function main() {
         })
 
       }
-    }, 20000);
-  })
-  return bootstrapApp();
-
-
-
+      bootstrapApp();
+    })
 }
 
 main();
