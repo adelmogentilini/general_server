@@ -1,6 +1,5 @@
 const { bootstrapApp } = require('./_coreboot');
 
-
 function main() {
 	console.log("CIAO CIAO")
     require('child_process').exec('git pull ', (error, stdout, stderr) => {
@@ -12,6 +11,7 @@ function main() {
       if(gitresp.indexOf("Already up to date") > -1)
       {
         console.log( "Controllo versione OK")
+        bootstrapApp();
       }else{
         console.log("Aggiornamento in corso .... ")
         require('child_process').exec('npm install ', (error, stdout, stderr) => {
@@ -21,9 +21,7 @@ function main() {
           }
           process.exit(1)
         })
-
       }
-      bootstrapApp();
     })
 }
 
