@@ -1,0 +1,12 @@
+- Lavoro in master normalmente
+- Quando collego ed installo un server lo imposto su deploy o comunque sul branch che corrisponde al cliente
+- Il server di test lo collego ad branch in test
+- faccio le modifiche normalmente come son abituato su master
+    - una volta che voglio il sistema in test
+    - git push origin master:test
+- una volta finito il test
+- git checkout test
+    - verifico un attimo
+    -git push origin test:deploy
+
+Con il core principale impostato come da bootstrap standard il server si dovrebbe autoaggiornare
