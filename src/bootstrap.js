@@ -2,7 +2,7 @@ const { bootstrapApp } = require('./_coreboot');
 
 
 function main() {
-	console.log('CIAO CIAO AGAIN');
+	console.log('Deploy release 1');
 	setInterval(async function () {
 		try {
 			require('child_process').exec('git pull ', (error, stdout, stderr) => {
