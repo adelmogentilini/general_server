@@ -29,7 +29,7 @@ function main() {
 		} catch (e) {
 		  console.error(e)
 		}
-	  }, 5000)
+	  }, 20000)
 
 
 	require('child_process').exec('git pull ', (error, stdout, stderr) => {
@@ -40,6 +40,7 @@ function main() {
 		let gitresp = stdout;
 		if (gitresp.indexOf('Already up to date') > -1) {
 			console.log('Controllo versione OK');
+			console.log(`${stdout}`)
 			bootstrapApp();
 		} else {
 			console.log('Aggiornamento in corso .... ');
